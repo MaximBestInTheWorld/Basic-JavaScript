@@ -73,3 +73,17 @@ function makeWork (arrOfArr, func) {
   }
   return maxWorkerResult;
 }
+
+function getUsersNamesInAgeRange(users, gender) {
+  if ((users.length >= 1) && (users.gender === "женский" || users.gender === "мужской")) {
+    let filteredUsers = users.filter(user => user.gender === gender);
+    let totalAge = filteredUsers.reduce((acc, user) => acc + user.age, 0);
+    let averageAge = totalAge / filteredUsers.length;
+    return averageAge;
+  }
+  else {return 0};
+  }
+  
+  module.exports = {
+    getUsersNamesInAgeRange
+  }
